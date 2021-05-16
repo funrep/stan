@@ -19,3 +19,11 @@ triple y = (y, y, y)
 data TupleRecord = TupleRecord
     { quadruple :: (Int, Int, Int, Int)
     }
+
+class TypeClass1 a where
+    (+++) :: a -> a -> a
+
+infixl 7 &&&
+class TypeClass2 a where
+    (&&&) :: a -> a -> a
+

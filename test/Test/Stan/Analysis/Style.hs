@@ -20,6 +20,10 @@ analysisStyleSpec analysis = describe "Style" $ do
         checkObservation Style.stan0301 6 1 6
     it "STAN-0301: no warning when fixity is declared" $
         noObservation Style.stan0301 10
+    it "STAN-0301: finds operator inside type class with the missing infix" $
+        checkObservation Style.stan0301 24 5 10
+    it "STAN-0301: no warning when fixity is declared for type class" $
+        noObservation Style.stan0301 28
 
     -- big tuples
     it "STAN-0302: triggers on tuple with 4 elements in the type signature" $
